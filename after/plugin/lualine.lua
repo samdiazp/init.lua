@@ -7,7 +7,10 @@ lualine.setup {
         theme = 'solarized_dark',
         section_separators = { left = '', right = '' },
         component_separators = { left = '', right = '' },
-        disabled_filetypes = {}
+        disabled_filetypes = {
+            'packer',
+            'NvimTree',
+        }
     },
     sections = {
         lualine_a = { 'mode' },
