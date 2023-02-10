@@ -33,6 +33,8 @@ packer.startup(function(use)
         },
     }
 
+    use { 'rmagatti/auto-session' }
+
     use {
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate"

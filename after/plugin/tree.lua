@@ -30,3 +30,5 @@ tree.setup {
         enable = true,
     }
 }
+
+vim.keymap.set("n", "<leader>pv", vim.cmd.NvimTreeFindFileToggle)
