@@ -84,4 +84,8 @@ packer.startup(function(use)
     use 'windwp/nvim-ts-autotag'
 
     use "ellisonleao/glow.nvim"
+    use {
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    }
 end)
