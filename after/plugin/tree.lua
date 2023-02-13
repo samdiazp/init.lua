@@ -20,7 +20,6 @@ tree.setup {
     },
     filters = {
         dotfiles = false,
-        custom = { ".git" },
     },
     diagnostics = {
         enable = true,
@@ -31,4 +30,5 @@ tree.setup {
     }
 }
 
-vim.keymap.set("n", "<leader>pv", vim.cmd.NvimTreeFindFileToggle)
+vim.keymap.set("n", "<leader>pv", vim.cmd.NvimTreeFindFile)
+vim.keymap.set("n", "<leader>pb", vim.cmd.NvimTreeFindFileToggle)
