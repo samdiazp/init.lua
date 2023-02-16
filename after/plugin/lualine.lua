@@ -21,8 +21,11 @@ lualine.setup {
             path = 0 -- 0 = just filename, 1 = relative path, 2 = absolute path
         } },
         lualine_x = {
-            { 'diagnostics', sources = { "nvim_diagnostic" }, symbols = { error = ' ', warn = ' ', info = ' ',
-                hint = ' ' } },
+            {
+                'diagnostics',
+                sources = { "nvim_diagnostic" },
+                symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' }
+            },
             'encoding',
             'filetype'
         },
@@ -42,5 +45,8 @@ lualine.setup {
         lualine_z = {}
     },
     tabline = {},
-    extensions = { 'fugitive' }
+    extensions = {
+        'fugitive',
+        'nvim-tree'
+    }
 }
