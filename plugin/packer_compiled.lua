@@ -84,6 +84,16 @@ _G.packer_plugins = {
     path = "/Users/piedra/.local/share/nvim/site/pack/packer/start/auto-session",
     url = "https://github.com/rmagatti/auto-session"
   },
+  ayu = {
+    loaded = true,
+    path = "/Users/piedra/.local/share/nvim/site/pack/packer/start/ayu",
+    url = "https://github.com/Shatur/neovim-ayu"
+  },
+  catppuccin = {
+    loaded = true,
+    path = "/Users/piedra/.local/share/nvim/site/pack/packer/start/catppuccin",
+    url = "https://github.com/catppuccin/nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/piedra/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -199,6 +209,11 @@ _G.packer_plugins = {
     path = "/Users/piedra/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/Users/piedra/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/navarasu/onedark.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/piedra/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -213,6 +228,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/piedra/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["rose-pine"] = {
+    loaded = true,
+    path = "/Users/piedra/.local/share/nvim/site/pack/packer/start/rose-pine",
+    url = "https://github.com/rose-pine/neovim"
   },
   spacecamp = {
     loaded = true,

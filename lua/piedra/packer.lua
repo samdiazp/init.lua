@@ -14,6 +14,19 @@ packer.startup(function(use)
         'jaredgorski/spacecamp',
         as = 'spacecamp',
     }
+    use {
+        "catppuccin/nvim",
+        as = "catppuccin"
+    }
+    use {
+        "Shatur/neovim-ayu",
+        as = "ayu"
+    }
+    use {
+        'rose-pine/neovim',
+        as = 'rose-pine'
+    }
+    use 'navarasu/onedark.nvim'
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
