@@ -12,11 +12,14 @@ tree.setup {
         side = 'left',
         number = true,
         relativenumber = true,
-        width = 40,
+        width = 30,
         hide_root_folder = true,
     },
     renderer = {
         indent_width = 1,
+    },
+    git = {
+        ignore = false,
     },
     filters = {
         dotfiles = false,
