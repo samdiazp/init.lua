@@ -12,4 +12,3 @@ function SetColorScheme(color)
     vim.api.nvim_set_hl(0, "NonText", { bg = "none", fg = "#3f3f3f" })
 end
 
-SetColorScheme()
