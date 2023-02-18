@@ -2,7 +2,7 @@ local function showFugitive()
     vim.cmd [[
         vertical Git
         wincmd L
-        vertical resize 50
+        vertical resize 70
         setlocal winfixwidth
     ]]
 end
