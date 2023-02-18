@@ -1,5 +1,9 @@
 vim.g.mapleader = " "
 
+-- make home key go to the first non-empty char
+vim.keymap.set("n", "<Home>", "^")
+vim.keymap.set("i", "<Home>", "<C-o>^")
+
 -- just to be able to swap selected lines
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
