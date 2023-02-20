@@ -4,12 +4,6 @@ if (not status) then
     return
 end
 
-local status, saga = pcall(require, "lspsaga")
-if (not status) then
-    print('lspsaga is not installed')
-    return
-end
-
 local status, cmp = pcall(require, 'cmp')
 if (not status) then
     print('cmp is not installed')
@@ -43,12 +37,12 @@ lsp.configure('lua_ls', {
 
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
-        ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-        ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-        ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-        ['<C-Space>'] = cmp.mapping.complete(),
-        ['<Esc>'] = cmp.mapping.close(),
-    })
+    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+    ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<Esc>'] = cmp.mapping.close(),
+})
 
 cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
@@ -67,17 +61,17 @@ lsp.set_preferences({
 })
 
 local null_opts = lsp.build_options('null-ls', {
-        -- uncomment this to enable format on save
-        -- on_attach = function(client)
-        --   if client.resolved_capabilities.document_formatting then
-        --     vim.api.nvim_create_autocmd("BufWritePre", {
-        --       desc = "Auto format before save",
-        --       pattern = "<buffer>",
-        --       callback = vim.lsp.buf.formatting_sync,
-        --     })
-        --   end
-        -- end
-    })
+    -- uncomment this to enable format on save
+    -- on_attach = function(client)
+    --   if client.resolved_capabilities.document_formatting then
+    --     vim.api.nvim_create_autocmd("BufWritePre", {
+    --       desc = "Auto format before save",
+    --       pattern = "<buffer>",
+    --       callback = vim.lsp.buf.formatting_sync,
+    --     })
+    --   end
+    -- end
+})
 
 null_ls.setup({
     on_attach = null_opts.on_attach,
@@ -92,14 +86,7 @@ null_ls.setup({
     }
 })
 
----- FIXME: throws an error
--- saga.init_lsp_saga {
---     server_filetype_map = {
---        typescript = 'typescript'
---     }
--- }
-
----@diagnostic disable-next-line: unused-local
+-- https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
 lsp.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
 
@@ -107,18 +94,48 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
     vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
     vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
-    vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
-    vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+    vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, opts)
+    vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end, opts)
     vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
     vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+
+    -- show diagnostics on cursor hold
+    vim.api.nvim_create_autocmd("CursorHold", {
+        buffer = bufnr,
+        callback = function()
+            -- TODO: add formatter using these icons and a newline at the end
+            -- mirror format from trouble
+            -- {
+            --     error = "",
+            --     warning = "",
+            --     hint = "",
+            --     information = "",
+            --     other = "﫠"
+            -- }
+
+
+            local float_opts = {
+                focusable = false,
+                close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+                border = 'rounded',
+                source = 'always',
+                -- scope = 'cursor',
+            }
+            vim.diagnostic.open_float(nil, float_opts)
+        end
+    })
+    vim.o.updatetime = 1000
 end)
 
--- vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+vim.keymap.set("n", "<leader>lrr", "<cmd>LspRestart<cr>")
+vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format)
 
 lsp.setup()
 
 vim.diagnostic.config({
-    virtual_text = true
+    virtual_text = true,
+    underline = true,
+    update_in_insert = true,
 })

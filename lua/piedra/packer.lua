@@ -54,6 +54,7 @@ packer.startup(function(use)
     }
     use "nvim-treesitter/playground"
 
+    -- lsp and diagnostics
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
@@ -77,13 +78,12 @@ packer.startup(function(use)
         }
     }
     use {
-        "glepnir/lspsaga.nvim",
-        branch = "main",
-        requires = { { "nvim-tree/nvim-web-devicons" } }
-    }
-    use {
         "jose-elias-alvarez/null-ls.nvim",
         requires = { "nvim-lua/plenary.nvim" },
+    }
+    use {
+        "folke/trouble.nvim",
+        requires = "nvim-tree/nvim-web-devicons",
     }
 
     use { 'mbbill/undotree' }
