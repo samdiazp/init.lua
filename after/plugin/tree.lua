@@ -56,5 +56,5 @@ tree.setup {
     }
 }
 
-vim.keymap.set("n", "<leader>pv", vim.cmd.NvimTreeFindFile)
-vim.keymap.set("n", "<leader>pb", vim.cmd.NvimTreeFindFileToggle)
+vim.keymap.set("n", "<leader>na", vim.cmd.NvimTreeFindFile)
+vim.keymap.set("n", "<leader>nt", vim.cmd.NvimTreeFindFileToggle)
