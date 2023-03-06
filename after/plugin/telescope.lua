@@ -40,14 +40,14 @@ telescope.setup({
     }
 })
 
-vim.keymap.set('n', '<leader>tf', builtin.find_files, {})
-vim.keymap.set('n', '<leader>ts', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>tb', builtin.buffers, {})
+vim.keymap.set('n', ';f', builtin.find_files, {})
+vim.keymap.set('n', ';e', builtin.live_grep, {})
+vim.keymap.set('n', ';b', builtin.buffers, {})
 vim.keymap.set('n', '<leader>td', builtin.diagnostics, {})
 vim.keymap.set('n', '<leader>tc', builtin.commands, {})
 vim.keymap.set('n', '<leader>tr', builtin.resume, {})
 
-vim.keymap.set('n', '<leader>tgf', builtin.git_files, {})
+vim.keymap.set('n', ';g', builtin.git_files, {})
 vim.keymap.set('n', '<leader>tgc', builtin.git_commits, {})
 vim.keymap.set('n', '<leader>tgb', builtin.git_bcommits, {})
 vim.keymap.set('n', '<leader>tgs', builtin.git_status, {})
