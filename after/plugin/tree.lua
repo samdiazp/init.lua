@@ -17,6 +17,29 @@ tree.setup {
     },
     renderer = {
         indent_width = 1,
+        indent_markers = {
+            enable = true,
+            inline_arrows = true,
+            icons = {
+                corner = "",
+                edge = "│",
+                item = "",
+                bottom = "─",
+                none = " ",
+            },
+        },
+        icons = {
+            git_placement = "after",
+            show = {
+                folder_arrow = false,
+            },
+            glyphs = {
+                folder = {
+                    default = "",
+                    open = "",
+                },
+            },
+        },
     },
     git = {
         ignore = false,
