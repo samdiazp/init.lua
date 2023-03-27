@@ -14,6 +14,7 @@ packer.startup(function(use)
         'jaredgorski/spacecamp',
         as = 'spacecamp',
     }
+    use { "ellisonleao/gruvbox.nvim" }
     use {
         "catppuccin/nvim",
         as = "catppuccin"
@@ -91,8 +92,6 @@ packer.startup(function(use)
 
     use { 'tpope/vim-fugitive' }
     use { 'lewis6991/gitsigns.nvim' }
-
-    use { "lukas-reineke/indent-blankline.nvim" }
 
     use 'windwp/nvim-autopairs'
     use 'windwp/nvim-ts-autotag'

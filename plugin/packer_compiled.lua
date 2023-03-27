@@ -134,10 +134,10 @@ _G.packer_plugins = {
     path = "/home/samue/.local/share/nvim/site/pack/packer/start/glow.nvim",
     url = "https://github.com/ellisonleao/glow.nvim"
   },
-  ["indent-blankline.nvim"] = {
+  ["gruvbox.nvim"] = {
     loaded = true,
-    path = "/home/samue/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
-    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+    path = "/home/samue/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
