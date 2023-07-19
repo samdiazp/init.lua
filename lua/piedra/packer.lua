@@ -24,6 +24,10 @@ packer.startup(function(use)
         as = "ayu"
     }
     use {
+        "folke/tokyonight.nvim",
+        as = "tokyonight"
+    }
+    use {
         'rose-pine/neovim',
         as = 'rose-pine'
     }
@@ -92,7 +96,7 @@ packer.startup(function(use)
 
     use { 'tpope/vim-fugitive' }
     use { 'lewis6991/gitsigns.nvim' }
-
+    use { "olimorris/onedarkpro.nvim" }
     use 'windwp/nvim-autopairs'
     use 'windwp/nvim-ts-autotag'
 
@@ -101,4 +105,5 @@ packer.startup(function(use)
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
     }
+    use "doums/darcula"
 end)

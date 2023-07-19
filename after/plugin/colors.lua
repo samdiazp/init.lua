@@ -1,5 +1,5 @@
-DefaultTheme = "gruvbox"
-LualineDefaultTheme = "gruvbox"
+DefaultTheme = "onedark"
+LualineDefaultTheme = "onedark"
 
 function SetColorScheme(color)
     color = color or DefaultTheme

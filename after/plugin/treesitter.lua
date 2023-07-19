@@ -7,15 +7,14 @@ ts.setup {
         "tsx",
         "toml",
         "json",
-        "yaml",
-        "swift",
         "css",
         "html",
         "lua",
         "vim",
         "c",
         "help",
-        "rust"
+        "rust",
+        "python"
     },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -63,6 +62,9 @@ ts.setup {
 
     autotag = {
         enable = true,
+    },
+    ignore_install = {
+        "help"
     }
 }
 

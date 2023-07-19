@@ -13,7 +13,6 @@ tree.setup {
         number = true,
         relativenumber = true,
         width = 30,
-        hide_root_folder = true,
     },
     renderer = {
         indent_width = 1,
@@ -28,6 +27,7 @@ tree.setup {
                 none = " ",
             },
         },
+        root_folder_label = false,
         icons = {
             git_placement = "after",
             show = {
